@@ -91,11 +91,17 @@ https://www.educoder.net/tasks/AGUY4O7A/4197532                ← 只有作业�
 包名 `dsh-educoder`，bundle 行 id 是 `educoder`。
 
 ```bash
-# 从 GitHub 安装（DSH 里用 plugin_manager，action: install_bundle）
+# npm（推荐，预构建安装还能跳过构建授权）
+#   target: dsh-educoder
+# 从 GitHub 装：
 #   target: github:isheng-eqi/dsh-educoder
-# 或从本地目录安装：
+# 从本地目录装：
 #   target: <本目录绝对路径>
 ```
+
+三种方式装的是同一份代码。npm 上的是 [`dsh-educoder`](https://www.npmjs.com/package/dsh-educoder)，
+发布包只含 12 个文件（`index.js`、`lib/`、`tests/`、`locale/`、`icon.svg`、
+`cordis.patch.yml`、`README`、`LICENSE`），不含 `node_modules`。
 
 装好后 `~/.dsh/profiles/<profile>/cordis.patch.yml` 里会出现 `educoder` 这一行，
 在它的 `config` 下填 `login` / `password` 即可 —— **config 是热应用的，不用重启**。
@@ -114,8 +120,8 @@ educoder_account  url: <你的作业链接>
 对方只需要有 DSH 和一台能联网的机器，三步：
 
 1. **装** —— DSH 里 `plugin_manager`，`action: install_bundle`，
-   `target: github:isheng-eqi/dsh-educoder`。公开仓库，不需要任何凭据。
-   包名是新的，首次加载直接生效，**不用重启**。
+   `target: dsh-educoder`（npm）或 `target: github:isheng-eqi/dsh-educoder`（GitHub）。
+   两者都是公开的，不需要任何凭据。包名是新的，首次加载直接生效，**不用重启**。
 2. **填自己的账号** —— 设置界面里这个插件的配置卡片，或 profile 的 `cordis.patch.yml`。
    填的是使用者自己的头歌账号；插件驱动的就是配置里那个账号。
 3. **说一句话** —— 「还有哪些作业没做」（`educoder_sweep mode=scan`，零 token），
