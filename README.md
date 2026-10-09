@@ -175,23 +175,6 @@ node <本目录>/tests/solve-loop.test.mjs
   输出被 `maxTokens` 截断时的提示、**选择题零 token 收割**（并断言全程不碰模型）、
   以及 **scan 绝不提交**。
 
-## 实测记录
-
-2026-10-09，用真实账号在课程「软件设计模式_24级」的作业
-`JAVA 面向对象设计原则实验`（`homework_common_id=4197532`，单关卡、6 个 Java 文件、
-无选择题）上跑通：
-
-```json
-{ "mode": "solve", "url": "https://www.educoder.net/tasks/AGUY4O7A/4197532/op7hwrazem5u" }
-```
-
-- 一次工具调用完成，**第 1 次提交就通过**，`attempts=1`
-- 解题模型 `deepseek-official/deepseek-flash`
-- **独立回读平台确认**（不是插件自己的报告）：`game.status=2`、`final_score=300`、
-  `accuracy=1`、`last_compile_output="compile successfully"`
-- **`evaluate_count=1`** —— 6 个文件只触发了一次评测，"多文件只评测一次"这个
-  省配额的不变量在真实平台上成立
-
 ## 安全性
 
 - `mode=solve` 会**真实提交**到平台并消耗评测次数；不确定时先用 `mode=survey` 巡检。
