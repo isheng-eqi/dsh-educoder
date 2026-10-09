@@ -52,6 +52,9 @@
   "bugs": {
     "url": "https://github.com/isheng-eqi/dsh-educoder/issues"
   },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "3.18.1"
+  },
   "peerDependencies": {
     "@deepseek-ai/schemastery": ">=3.0.0 <4.0.0"
   },
