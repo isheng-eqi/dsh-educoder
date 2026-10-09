@@ -109,6 +109,29 @@ educoder_account  url: <你的作业链接>
 它会真读一次该关卡；能读到就说明会话有效（只列课程不算证据，见下）。
 只想看不提交就用 `educoder_homework` 的 `mode: "survey"`。
 
+### 发给别人用
+
+对方只需要有 DSH 和一台能联网的机器，三步：
+
+1. **装** —— DSH 里 `plugin_manager`，`action: install_bundle`，
+   `target: github:isheng-eqi/dsh-educoder`。公开仓库，不需要任何凭据。
+   包名是新的，首次加载直接生效，**不用重启**。
+2. **填自己的账号** —— 设置界面里这个插件的配置卡片，或 profile 的 `cordis.patch.yml`。
+   填的是使用者自己的头歌账号；插件驱动的就是配置里那个账号。
+3. **说一句话** —— 「还有哪些作业没做」（`educoder_sweep mode=scan`，零 token），
+   或「都做了吧」（`mode=solve`）。
+
+不需要 Python、不需要浏览器扩展、不需要任何第三方密钥：
+
+- 仓库里**没有** `node_modules`，唯一的外部依赖 `@deepseek-ai/schemastery`
+  由 DSH 安装本身提供 —— profile 的 `pnpm-workspace.yaml` 固定写着 `nodeLinker: hoisted`，
+  依赖是扁平摊在 `<profile>/node_modules` 里的，任何插件都能沿目录向上解析到。
+  （已实测：把公开发布版 clone 到一个全新的空目录、再按 pnpm 的布局放好，
+  `import('./index.js')` 直接成功，`schemastery` 从 profile 解析到。）
+- 会话缓存写在 `~/.educoder/session.json`（0600），只有首次需要账号密码。
+
+⚠️ 它会**真实提交**到平台并消耗评测次数，驱动的是配置里那个账号——给别人之前请让对方知道这一点。
+
 ### 两个平台事实（实测）
 
 - **`/courses.json` 不需要登录也返回数据**，所以「能列出课程」不能证明凭据有效；
