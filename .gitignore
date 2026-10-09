@@ -1,0 +1,10 @@
+# The vendored copy that makes a local `link:` install resolve
+# @deepseek-ai/schemastery from this directory. A real install resolves the
+# declared peer dependencies from the DSH installation instead, so this must
+# never be published.
+node_modules/
+
+# Scratch
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "EduCoder Homework Finisher",
+    "description": "Finishes a 头歌 (EduCoder) homework end to end over the platform's JSON API: walks every challenge, submits the built-in choice answers, and generates, uploads and grades code until each challenge passes."
+  }
+}

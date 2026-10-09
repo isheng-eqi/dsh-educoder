@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="EduCoder homework finisher">
+  <title>EduCoder homework finisher</title>
+  <defs>
+    <linearGradient id="edu-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#edu-bg)"/>
+  <!-- mortarboard body -->
+  <path d="M15 29v11c0 6 7.6 9.5 17 9.5S49 46 49 40V29Z" fill="#ffffff" fill-opacity="0.82"/>
+  <!-- mortarboard board -->
+  <path d="M32 12 58 25 32 38 6 25Z" fill="#ffffff"/>
+  <!-- tassel -->
+  <path d="M58 25v13" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <circle cx="58" cy="41" r="3" fill="#ffffff" opacity="0.9"/>
+  <!-- completion badge -->
+  <circle cx="46" cy="47" r="13.5" fill="#16a34a" stroke="#ffffff" stroke-width="2.6"/>
+  <path d="M40 47.2 44.6 51.8 52.4 43.2" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

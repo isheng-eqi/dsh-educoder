@@ -1,0 +1,26 @@
+# dsh-plugin-educoder — bundle patch.
+#
+# Inserts one Host row. The plugin needs no storage rows and no client half: it
+# registers two tools and talks to data.educoder.net over the Host process's own
+# network path.
+#
+# Fill in `login` / `password` below (or edit them later from the plugin's
+# settings surface). Leaving them empty is fine when a session cache already
+# exists at ~/.educoder/session.json — the same file the educoder-lab CLI writes.
+- insert:
+    - id: educoder
+      name: 'dsh-educoder'
+      config:
+        login: ''
+        password: ''
+        # Leave blank to reuse the current session's model.
+        provider: ''
+        model: ''
+        maxAttempts: 3
+        maxTokens: 8000
+        gradeTimeoutSec: 180
+        pollIntervalSec: 3
+        requestTimeoutSec: 30
+        # 0 = finish every open challenge in one call.
+        challengeLimit: 0
+        toolTimeoutMinutes: 45

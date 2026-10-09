@@ -1,0 +1,71 @@
+{
+  "name": "dsh-educoder",
+  "version": "1.1.0",
+  "type": "module",
+  "description": "头歌（EduCoder）作业自动化 DSH 插件：全量扫描未完成作业并一次做完。选择题靠平台在提交响应里回吐的答案键零 token 通过，只有代码题才调用模型生成→上传→评测→按报错重试。",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib/api": "./lib/api.js",
+    "./lib/flow": "./lib/flow.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "tests",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node tests/smoke.test.mjs && node tests/solve-loop.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "educoder",
+    "头歌",
+    "cordis",
+    "automation",
+    "homework"
+  ],
+  "license": "MIT",
+  "author": "isheng-eqi",
+  "engines": {
+    "node": ">=20.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isheng-eqi/dsh-educoder.git"
+  },
+  "homepage": "https://github.com/isheng-eqi/dsh-educoder#readme",
+  "bugs": {
+    "url": "https://github.com/isheng-eqi/dsh-educoder/issues"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0 <5.0.0",
+    "@deepseek-ai/dsh-tools": ">=0.1.0 <1.0.0",
+    "@deepseek-ai/schemastery": ">=3.0.0 <4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  }
+}
